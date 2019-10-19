@@ -1,6 +1,7 @@
 <?php
 namespace concepture\php\data\core\db\mysql\read;
 
+use concepture\core\base\ReadCondition;
 use concepture\php\data\core\db\QueryBuilder as Base;
 use concepture\php\data\core\db\ReadQueryBuilderInterface;
 use concepture\php\data\core\traits\GroupTrait;
@@ -26,6 +27,9 @@ class QueryBuilder extends Base implements ReadQueryBuilderInterface
 
     protected $calcRows = false;
 
+    /**
+     * @return $this
+     */
     public function makeSelectSql()
     {
         $sql = "SELECT ";
@@ -60,45 +64,45 @@ class QueryBuilder extends Base implements ReadQueryBuilderInterface
         return $this;
     }
 
-//    /**
-//     * загружает ReadQuery
-//     *
-//     * @param ReadCondition $readQuery
-//     */
-//    public function applyReadQuery(ReadCondition $readQuery)
-//    {
-//        if (! empty($readQuery->getSelect())){
-//            $this->select = $readQuery->getSelect();
-//        }
-//        if (! empty($readQuery->getJoin())){
-//            $this->join = $readQuery->getJoin();
-//        }
-//        if (! empty($readQuery->getOrder())){
-//            $this->order = $readQuery->getOrder();
-//        }
-//        if (! empty($readQuery->getTable())){
-//            $this->table = $readQuery->getTable();
-//        }
-//        if (! empty($readQuery->getTableAlias())){
-//            $this->tableAlias = $readQuery->getTableAlias();
-//        }
-//        if (! empty($readQuery->getWhere())){
-//            $this->where = $readQuery->getWhere();
-//        }
-//        if (! empty($readQuery->getLimit())){
-//            $this->limit = $readQuery->getLimit();
-//        }
-//        if (! empty($readQuery->getOffset())){
-//            $this->offset = $readQuery->getOffset();
-//        }
-//        if (! empty($readQuery->getOrder())){
-//            $this->order = $readQuery->getOrder();
-//        }
-//        if (! empty($readQuery->getGroup())){
-//            $this->group = $readQuery->getGroup();
-//        }
-//        if (! empty($readQuery->getParams())){
-//            $this->params = $readQuery->getParams();
-//        }
-//    }
+    /**
+     * apply ReadCondition to Builder
+     *
+     * @param ReadCondition $readCondition
+     */
+    public function applyReadQuery(ReadCondition $readCondition)
+    {
+        if (! empty($readCondition->getSelect())){
+            $this->select = $readCondition->getSelect();
+        }
+        if (! empty($readCondition->getJoin())){
+            $this->join = $readCondition->getJoin();
+        }
+        if (! empty($readCondition->getOrder())){
+            $this->order = $readCondition->getOrder();
+        }
+        if (! empty($readCondition->getTable())){
+            $this->table = $readCondition->getTable();
+        }
+        if (! empty($readCondition->getTableAlias())){
+            $this->tableAlias = $readCondition->getTableAlias();
+        }
+        if (! empty($readCondition->getWhere())){
+            $this->where = $readCondition->getWhere();
+        }
+        if (! empty($readCondition->getLimit())){
+            $this->limit = $readCondition->getLimit();
+        }
+        if (! empty($readCondition->getOffset())){
+            $this->offset = $readCondition->getOffset();
+        }
+        if (! empty($readCondition->getOrder())){
+            $this->order = $readCondition->getOrder();
+        }
+        if (! empty($readCondition->getGroup())){
+            $this->group = $readCondition->getGroup();
+        }
+        if (! empty($readCondition->getParams())){
+            $this->params = $readCondition->getParams();
+        }
+    }
 }
