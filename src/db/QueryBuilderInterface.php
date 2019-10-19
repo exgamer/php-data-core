@@ -8,6 +8,8 @@ namespace concepture\php\data\core\db;
  */
 interface QueryBuilderInterface
 {
+    public function setSql($sql) : string;
+    public function setParams($params) : array;
     public function getSql() : string;
     public function getParams() : array;
 }
