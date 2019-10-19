@@ -1,6 +1,7 @@
 <?php
 namespace concepture\php\data\core\db\mysql\modify;
 
+use concepture\php\data\core\db\ModifyQueryBuilderInterface;
 use concepture\php\data\core\traits\WhereTrait;
 use concepture\php\data\core\db\QueryBuilder as Base;
 
@@ -9,7 +10,7 @@ use concepture\php\data\core\db\QueryBuilder as Base;
  * @package concepture\php\core\storage\db\query\modify
  * @author Olzhas Kulzhambekov <exgamer@live.ru>
  */
-class QueryBuilder extends Base
+class QueryBuilder extends Base implements ModifyQueryBuilderInterface
 {
     use WhereTrait;
 

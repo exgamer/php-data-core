@@ -2,6 +2,7 @@
 namespace concepture\php\data\core\db\mysql\read;
 
 use concepture\php\data\core\db\QueryBuilder as Base;
+use concepture\php\data\core\db\ReadQueryBuilderInterface;
 use concepture\php\data\core\traits\GroupTrait;
 use concepture\php\data\core\traits\JoinTrait;
 use concepture\php\data\core\traits\LimitOffsetTrait;
@@ -14,7 +15,7 @@ use concepture\php\data\core\traits\WhereTrait;
  * @package concepture\php\query\base\read
  * @author Olzhas Kulzhambekov <exgamer@live.ru>
  */
-class QueryBuilder extends Base
+class QueryBuilder extends Base implements ReadQueryBuilderInterface
 {
     use WhereTrait;
     use JoinTrait;
