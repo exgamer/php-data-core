@@ -1,0 +1,25 @@
+{
+    "name": "concepture/php-data-core",
+    "license": "BSD-3-Clause",
+    "description": "package under development",
+    "authors": [
+        {
+            "name": "Olzhas Kulzhambekov",
+            "email": "exgamer@live.ru"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "concepture/php-core": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "concepture\\php\\data\\core\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.0-dev"
+        }
+    }
+}
