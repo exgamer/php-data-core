@@ -1,5 +1,5 @@
 <?php
-namespace concepture\php\data\core\contract\db;
+namespace concepture\php\data\core\db;
 
 use concepture\php\data\core\data\DataReadInterface as Base;
 
