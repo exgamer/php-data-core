@@ -3,7 +3,7 @@ namespace concepture\php\data\core\traits;
 
 /**
  * Trait LimitOffsetTrait
- * @package concepture\php\query\traits
+ * @package concepture\php\data\core\traits
  * @author Olzhas Kulzhambekov <exgamer@live.ru>
  */
 trait LimitOffsetTrait

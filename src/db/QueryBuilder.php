@@ -5,7 +5,7 @@ use concepture\php\core\base\Component;
 
 /**
  * Class QueryBuilder
- * @package concepture\core\base
+ * @package concepture\php\data\core\db
  * @author Olzhas Kulzhambekov <exgamer@live.ru>
  */
 class QueryBuilder extends Component implements QueryBuilderInterface

@@ -66,7 +66,7 @@ class QueryBuilder extends Base implements ReadQueryBuilderInterface
 
     /**
      * @todo do refactor
-     * 
+     *
      * apply ReadCondition to Builder
      *
      * @param ReadCondition $readCondition
