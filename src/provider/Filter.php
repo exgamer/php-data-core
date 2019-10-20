@@ -1,7 +1,6 @@
 <?php
 namespace concepture\php\data\core\provider;
 
-use concepture\core\base\ReadCondition;
 use concepture\php\core\base\Component;
 use concepture\php\data\core\data\ReadConditionInterface;
 

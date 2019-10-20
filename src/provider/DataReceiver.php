@@ -11,7 +11,7 @@ use concepture\php\core\base\Component;
 abstract class DataReceiver extends Component implements DataReceiverInterface
 {
     /**
-     * @var DataProvider
+     * @var DataProviderInterface
      */
    protected $dataProvider;
     /**
@@ -22,7 +22,7 @@ abstract class DataReceiver extends Component implements DataReceiverInterface
     /**
      * @return string
      */
-    public function getFilterClass()
+    public function getFilterClass():string
     {
         return $this->filterClass;
     }
