@@ -11,7 +11,13 @@ use Exception;
  */
 class DataProvider extends Base
 {
-
+    /**
+     * @return Storage
+     */
+    public function getStorage()
+    {
+        throw new Exception("realize to get storage from logic");
+    }
 
     /**
      * @return string

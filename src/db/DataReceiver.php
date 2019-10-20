@@ -22,7 +22,7 @@ class DataReceiver extends Base
          */
         $readCondition->select(["COUNT(*) as total"]);
         /**
-         * @todo как вызвать сервис если тут его пока нет
+         * @todo костылек
          */
         return $this->getDataProvider()->getStorage()->allByCondition($readCondition);
     }
@@ -42,7 +42,7 @@ class DataReceiver extends Base
         $offset = $pageSize * (int) ($page-1);
         $readCondition->offset($offset);
         /**
-         * @todo как вызвать сервис если тут его пока нет
+         * @todo костылек
          */
         return $this->getDataProvider()->getStorage()->allByCondition($readCondition);
     }
