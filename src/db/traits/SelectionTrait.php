@@ -12,6 +12,13 @@ trait SelectionTrait
     protected $select = [];
     protected $tableAlias = null;
 
+    public function clearSelect()
+    {
+        $this->select = [];
+
+        return $this;
+    }
+
     public function select($items)
     {
         foreach ($items as $item){

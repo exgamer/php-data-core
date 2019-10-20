@@ -2,6 +2,7 @@
 namespace concepture\php\data\core\db;
 
 use concepture\php\data\core\provider\DataProvider as Base;
+use Exception;
 
 /**
  * Class DataProvider
@@ -10,6 +11,14 @@ use concepture\php\data\core\provider\DataProvider as Base;
  */
 class DataProvider extends Base
 {
+    /**
+     * @return Storage
+     */
+    public function getStorage()
+    {
+        throw new Exception("realize to get storage from logic");
+    }
+
     /**
      * @return string
      */

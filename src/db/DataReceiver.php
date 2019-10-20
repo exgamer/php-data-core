@@ -11,26 +11,18 @@ use concepture\php\data\core\provider\DataReceiver as Base;
 class DataReceiver extends Base
 {
     /**
-     * @param ReadCondition $readCondition
-     * @return array
-     */
-    protected function callLogic(ReadCondition $readCondition) : array
-    {
-
-    }
-
-    /**
      * @param $readCondition
      * @return array
      */
     protected function getDataTotalCount( ReadCondition $readCondition) : array
     {
+        $readCondition->clearSelect();
         /*
          * Получаем общее количество записей
          */
         $readCondition->select(["COUNT(*) as total"]);
 
-        return $this->callLogic($readCondition);
+        return $this->getDataProvider()->getStorage()->allByCondition($readCondition);
     }
 
     /**
@@ -48,7 +40,7 @@ class DataReceiver extends Base
         $offset = $pageSize * (int) ($page-1);
         $readCondition->offset($offset);
 
-        return $this->callLogic($readCondition);
+        return $this->getDataProvider()->getStorage()->allByCondition($readCondition);
     }
 
     /**
