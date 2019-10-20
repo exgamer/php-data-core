@@ -184,16 +184,15 @@ abstract class DataProvider extends Component implements DataProviderInterface
     }
 
     /**
-     * Возвращает массив данных из хранилища
+     * Возвращает массив данных
      *
      * @return array
      */
-    protected abstract function receiveData() : array;
+    protected function receiveData() : array
+    {
 
-    /**
-     * @return string
-     */
-    protected abstract function getDataReceiverClass() : string;
+        return $this->getDataReceiver()->receiveData();
+    }
 
     /**
      * Возвращает DataReceiver
@@ -214,4 +213,9 @@ abstract class DataProvider extends Component implements DataProviderInterface
             "filterClass" => $this->getFilterClass(),
         ]);
     }
+
+    /**
+     * @return string
+     */
+    protected abstract function getDataReceiverClass() : string;
 }
