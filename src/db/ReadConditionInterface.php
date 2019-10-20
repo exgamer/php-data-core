@@ -1,5 +1,5 @@
 <?php
-namespace concepture\php\data\core\data;
+namespace concepture\php\data\core\db;
 
 /**
  * Interface ReadConditionInterface

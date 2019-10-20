@@ -10,8 +10,8 @@ use concepture\php\data\core\data\DataReadInterface as Base;
  */
 interface DataReadInterface extends Base
 {
-    public function oneById(int $id, array $condition = null) : array ;
-    public function oneByCondition(array $condition) : array;
-    public function allByIds(array $ids, array $condition = null) : array;
-    public function allByCondition(array $condition) : array;
+    public function oneById(int $id, $condition = null) : array ;
+    public function oneByCondition($condition) : array;
+    public function allByIds(array $ids, $condition = null) : array;
+    public function allByCondition($condition) : array;
 }

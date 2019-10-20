@@ -2,11 +2,11 @@
 namespace concepture\php\data\core\data;
 
 /**
- * Interface ReadConditionInterface
+ * Interface StorageInterface
  * @package concepture\php\data\core\data
  * @author Olzhas Kulzhambekov <exgamer@live.ru>
  */
-interface ReadConditionInterface
+interface StorageInterface extends DataModifyInterface, DataReadInterface
 {
 
 }

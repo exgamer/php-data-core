@@ -10,6 +10,6 @@ use concepture\php\data\core\data\DataModifyInterface as Base;
 interface DataModifyInterface extends Base
 {
     public function insert($data) : int ;
-    public function update(array $condition, array  $data) : bool ;
-    public function remove(array $id) : bool ;
+    public function update(array $params, $condition) : bool ;
+    public function delete(array $id) : bool ;
 }

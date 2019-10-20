@@ -5,7 +5,7 @@ namespace concepture\php\data\core\db;
  * Interface ModifyQueryBuilderInterface
  * @package concepture\php\data\core\db
  */
-interface ModifyQueryBuilderInterface
+interface ModifyQueryBuilderInterface extends QueryBuilderInterface
 {
     public function makeInsertSql();
     public function makeUpdateSql();
