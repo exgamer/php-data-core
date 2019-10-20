@@ -3,16 +3,17 @@ namespace concepture\php\data\core\provider;
 
 use concepture\core\base\ReadCondition;
 use concepture\php\core\base\Component;
+use concepture\php\data\core\data\ReadConditionInterface;
 
 /**
  * Class Filter
  * @package concepture\php\data\core\data
  * @author Olzhas Kulzhambekov <exgamer@live.ru>
  */
-abstract class Filter extends Component
+abstract class Filter extends Component implements FilterInterface
 {
     /**
-     * @var ReadCondition
+     * @var ReadConditionInterface
      */
     private $readCondition;
     /**
@@ -23,7 +24,6 @@ abstract class Filter extends Component
     public function init()
     {
         parent::init();
-        $this->readCondition = new ReadCondition();
         $this->apply($this->getParams(), $this->readCondition);
     }
 
@@ -50,19 +50,27 @@ abstract class Filter extends Component
     /**
      * Возвращает условия выборки
      *
-     * @return ReadCondition
+     * @return ReadConditionInterface
      */
-    public function getReadCondition() : ReadCondition
+    public function getReadCondition() : ReadConditionInterface
     {
         return$this->readCondition;
+    }
+
+    /**
+     * @param ReadConditionInterface $readCondition
+     */
+    public function setReadCondition(ReadConditionInterface $readCondition)
+    {
+        $this->readCondition = $readCondition;
     }
 
     /**
      * Метод для настройки фильтра
      *
      * @param array $params
-     * @param ReadCondition $readCondition
+     * @param ReadConditionInterface $readCondition
      * @return mixed
      */
-    protected abstract function apply(array $params, ReadCondition $readCondition);
+    protected abstract function apply(array $params, ReadConditionInterface $readCondition);
 }

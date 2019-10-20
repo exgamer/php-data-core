@@ -9,7 +9,7 @@ use concepture\php\core\base\Component;
  * Class DataProvider
  * @author citizenzet <exgamer@live.ru>
  */
-abstract class DataProvider extends Component
+abstract class DataProvider extends Component implements DataProviderInterface
 {
     /**
      * @var array
@@ -158,7 +158,7 @@ abstract class DataProvider extends Component
     /**
      * @param array $queryParams
      */
-    public function setQueryParams(array $queryParams): void
+    public function setQueryParams(array $queryParams)
     {
         $this->queryParams = $queryParams;
     }
@@ -200,7 +200,7 @@ abstract class DataProvider extends Component
      *
      * @return DataReceiver
      */
-    protected function getDataReceiver() : DataReceiver
+    protected function getDataReceiver() : DataReceiverInterface
     {
         $dataReceiverClass = $this->getDataReceiverClass();
         $dataReceiverConfig = $this->getDataReceiverConfig();

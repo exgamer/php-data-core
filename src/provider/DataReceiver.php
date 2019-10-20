@@ -8,7 +8,7 @@ use concepture\php\core\base\Component;
  * @package concepture\php\data\core\data
  * @author Olzhas Kulzhambekov <exgamer@live.ru>
  */
-abstract class DataReceiver extends Component
+abstract class DataReceiver extends Component implements DataReceiverInterface
 {
     /**
      * @var DataProvider
@@ -36,25 +36,18 @@ abstract class DataReceiver extends Component
     }
 
     /**
-     * @return DataProvider
+     * @return DataProviderInterface
      */
-    protected function getDataProvider(): DataProvider
+    protected function getDataProvider(): DataProviderInterface
     {
         return $this->dataProvider;
     }
 
     /**
-     * @param DataProvider $dataProvider
+     * @param DataProviderInterface $dataProvider
      */
-    protected function setDataProvider(DataProvider $dataProvider)
+    protected function setDataProvider(DataProviderInterface $dataProvider)
     {
         $this->dataProvider = $dataProvider;
     }
-   
-    /**
-     * Возвращает массив данных
-     *
-     * @return array
-     */
-    public abstract function receiveData() : array ;
 }

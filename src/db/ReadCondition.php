@@ -3,6 +3,7 @@ namespace concepture\core\base;
 
 
 use concepture\php\core\base\Component;
+use concepture\php\data\core\data\ReadConditionInterface;
 use concepture\php\data\core\traits\GroupTrait;
 use concepture\php\data\core\traits\JoinTrait;
 use concepture\php\data\core\traits\LimitOffsetTrait;
@@ -17,7 +18,7 @@ use concepture\php\data\core\traits\WhereTrait;
  *
  * @author citizenzer <exgamer@live.ru>
  */
-class ReadCondition extends Component
+class ReadCondition extends Component implements ReadConditionInterface
 {
     protected $params = [];
 
