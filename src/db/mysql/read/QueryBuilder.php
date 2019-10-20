@@ -4,12 +4,12 @@ namespace concepture\php\data\core\db\mysql\read;
 use concepture\core\base\ReadCondition;
 use concepture\php\data\core\db\QueryBuilder as Base;
 use concepture\php\data\core\db\ReadQueryBuilderInterface;
-use concepture\php\data\core\traits\GroupTrait;
-use concepture\php\data\core\traits\JoinTrait;
-use concepture\php\data\core\traits\LimitOffsetTrait;
-use concepture\php\data\core\traits\OrderTrait;
-use concepture\php\data\core\traits\SelectionTrait;
-use concepture\php\data\core\traits\WhereTrait;
+use concepture\php\data\core\db\traits\GroupTrait;
+use concepture\php\data\core\db\traits\JoinTrait;
+use concepture\php\data\core\db\traits\LimitOffsetTrait;
+use concepture\php\data\core\db\traits\OrderTrait;
+use concepture\php\data\core\db\traits\SelectionTrait;
+use concepture\php\data\core\db\traits\WhereTrait;
 
 /**
  * Class QueryBuilder

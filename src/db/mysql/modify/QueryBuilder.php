@@ -2,8 +2,8 @@
 namespace concepture\php\data\core\db\mysql\modify;
 
 use concepture\php\data\core\db\ModifyQueryBuilderInterface;
-use concepture\php\data\core\traits\WhereTrait;
 use concepture\php\data\core\db\QueryBuilder as Base;
+use concepture\php\data\core\db\traits\WhereTrait;
 
 /**
  * Class QueryBuilder

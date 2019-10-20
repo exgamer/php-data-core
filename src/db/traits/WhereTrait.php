@@ -1,5 +1,5 @@
 <?php
-namespace concepture\php\data\core\traits;
+namespace concepture\php\data\core\db\traits;
 
 use concepture\php\data\core\enum\QueryEnum;
 
