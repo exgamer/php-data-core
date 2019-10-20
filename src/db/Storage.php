@@ -5,6 +5,7 @@ use concepture\php\core\base\Component;
 use concepture\php\data\core\data\StorageInterface;
 use concepture\php\data\core\db\traits\StorageModifyMethodsTrait;
 use concepture\php\data\core\db\traits\StorageReadMethodsTrait;
+use Exception;
 use PDO;
 
 /**
