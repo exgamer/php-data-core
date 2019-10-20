@@ -55,6 +55,12 @@ trait StorageReadMethodsTrait
      */
     public function oneByCondition($condition)
     {
+        if ($condition instanceof ReadQueryBuilderInterface)
+        {
+
+            return $this->fetchOne($condition);
+        }
+
         $builder = $this->getReadQueryBuilder();
         if (is_callable($condition)){
             call_user_func($condition, $builder);
@@ -128,6 +134,12 @@ trait StorageReadMethodsTrait
      */
     public function allByCondition($condition)
     {
+        if ($condition instanceof ReadQueryBuilderInterface)
+        {
+
+            return $this->fetchAll($condition);
+        }
+
         $builder = $this->getReadQueryBuilder();
         if (is_callable($condition)) {
             call_user_func($condition, $builder);

@@ -5,24 +5,37 @@ use concepture\php\core\base\Component;
 use concepture\php\data\core\data\StorageInterface;
 use concepture\php\data\core\db\traits\StorageModifyMethodsTrait;
 use concepture\php\data\core\db\traits\StorageReadMethodsTrait;
+use PDO;
 
 /**
  * Class Storage
  * @package concepture\php\data\core\db
  * @author Olzhas Kulzhambekov <exgamer@live.ru>
  */
-class Storage extends Component implements StorageInterface, StorageQueryBuilderInterface, DataModifyInterface, DataReadInterface
+abstract class Storage extends Component implements StorageInterface, StorageQueryBuilderInterface, DataModifyInterface, DataReadInterface
 {
     use StorageModifyMethodsTrait;
     use StorageReadMethodsTrait;
 
-    public function getReadQueryBuilder(): ReadQueryBuilderInterface
+    /**
+     * @var PDO
+     */
+    protected $connection;
+
+    /**
+     * @return PDO
+     * @throws Exception
+     */
+    protected function getConnection() : PDO
     {
-        // TODO: Implement getReadQueryBuilder() method.
+        if (! $this->connection){
+            throw new Exception("Please set Db Connection");
+        }
+        return $this->connection;
     }
 
-    public function getModifyQueryBuilder(): ModifyQueryBuilderInterface
-    {
-        // TODO: Implement getModifyQueryBuilder() method.
-    }
+    /**
+     * @return string
+     */
+    protected abstract function getTableName() : string ;
 }
