@@ -107,5 +107,13 @@ trait WhereTrait
 
         return $sql;
     }
+
+    /**
+     * @return array
+     */
+    public function getWhere(): array
+    {
+        return $this->where;
+    }
 }
 
