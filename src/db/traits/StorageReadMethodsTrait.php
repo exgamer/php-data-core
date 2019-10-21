@@ -1,7 +1,7 @@
 <?php
 namespace concepture\php\data\core\db\traits;
 
-use concepture\php\data\core\db\ReadConditionInterface;
+use concepture\php\data\core\data\ReadConditionInterface;
 use concepture\php\data\core\db\ReadQueryBuilderInterface;
 
 /**
@@ -24,7 +24,7 @@ trait StorageReadMethodsTrait
      * @param array|callable $condition
      * @return array
      */
-    public function oneById(int $id, $condition = null) : array 
+    public function oneById(int $id, $condition = null) : array
     {
         $builder = $this->getReadQueryBuilder();
         $builder->andWhere(['id' => $id]);
@@ -139,7 +139,7 @@ trait StorageReadMethodsTrait
 
             return $this->fetchAll($condition);
         }
-
+        dump($condition);
         $builder = $this->getReadQueryBuilder();
         if (is_callable($condition)) {
             call_user_func($condition, $builder);
