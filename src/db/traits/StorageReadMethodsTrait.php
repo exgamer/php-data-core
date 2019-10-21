@@ -81,9 +81,6 @@ trait StorageReadMethodsTrait
     protected function fetchOne(QueryBuilderInterface $builder)
     {
         $this->extendBuilder($builder);
-        if (method_exists($builder, "makeSelectSql")) {
-            $builder->makeSelectSql();
-        }
         $sql = $builder->getSql();
         $params = $builder->getParams();
         $stmt = $this->buildPdoStatement($sql, $params);
@@ -163,9 +160,6 @@ trait StorageReadMethodsTrait
     protected function fetchAll(QueryBuilderInterface $builder)
     {
         $this->extendBuilder($builder);
-        if (method_exists($builder, "makeSelectSql")) {
-            $builder->makeSelectSql();
-        }
         $sql = $builder->getSql();
         $params = $builder->getParams();
         $stmt = $this->buildPdoStatement($sql, $params);
@@ -201,6 +195,7 @@ trait StorageReadMethodsTrait
     {
         if ($builder instanceof ReadQueryBuilderInterface) {
             $builder->from($this->getTableName());
+            $builder->makeSelectSql();
         }
     }
 }
