@@ -139,7 +139,6 @@ trait StorageReadMethodsTrait
 
             return $this->fetchAll($condition);
         }
-        dump($condition);
         $builder = $this->getReadQueryBuilder();
         if (is_callable($condition)) {
             call_user_func($condition, $builder);
