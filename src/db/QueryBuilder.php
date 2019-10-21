@@ -24,7 +24,7 @@ class QueryBuilder extends Component implements QueryBuilderInterface
      * @param $sql
      * @return string
      */
-    public function setSql($sql) : string
+    public function setSql(string $sql)
     {
         $this->sql = $sql;
     }
@@ -33,7 +33,7 @@ class QueryBuilder extends Component implements QueryBuilderInterface
      * @param $params
      * @return array
      */
-    public function setParams($params) : array
+    public function setParams(array $params)
     {
         $this->params = $params;
     }
