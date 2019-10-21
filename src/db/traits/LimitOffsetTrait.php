@@ -8,8 +8,8 @@ namespace concepture\php\data\core\db\traits;
  */
 trait LimitOffsetTrait
 {
-    protected $limit = null;
-    protected $offset = null;
+    protected $limit = "";
+    protected $offset = "";
 
     public function limit($limit)
     {

@@ -8,9 +8,9 @@ namespace concepture\php\data\core\db\traits;
  */
 trait SelectionTrait
 {
-    protected $table;
+    protected $table = "";
     protected $select = [];
-    protected $tableAlias = null;
+    protected $tableAlias = "";
 
     public function clearSelect()
     {

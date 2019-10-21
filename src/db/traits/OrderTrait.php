@@ -8,7 +8,7 @@ namespace concepture\php\data\core\db\traits;
  */
 trait OrderTrait
 {
-    protected $order = null;
+    protected $order = "";
 
     /**
      * @param $order

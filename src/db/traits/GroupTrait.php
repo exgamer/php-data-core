@@ -8,7 +8,7 @@ namespace concepture\php\data\core\db\traits;
  */
 trait GroupTrait
 {
-    protected $group = null;
+    protected $group = "";
 
     /**
      * @return string
