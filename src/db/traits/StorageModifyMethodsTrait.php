@@ -17,7 +17,7 @@ trait StorageModifyMethodsTrait
      * @return mixed
      * @throws Exception
      */
-    public function insert($params)
+    public function insert(array $params) : int
     {
         $this->getConnection()->beginTransaction();
         try {
