@@ -2,6 +2,7 @@
 namespace concepture\php\data\core\db\traits;
 
 use concepture\php\data\core\data\ReadConditionInterface;
+use concepture\php\data\core\db\QueryBuilderInterface;
 use concepture\php\data\core\db\ReadQueryBuilderInterface;
 
 /**
@@ -74,13 +75,15 @@ trait StorageReadMethodsTrait
     /**
      * Возвращает 1 запись
      *
-     * @param ReadQueryBuilderInterface $builder
+     * @param QueryBuilderInterface $builder
      * @return array
      */
-    protected function fetchOne(ReadQueryBuilderInterface $builder)
+    protected function fetchOne(QueryBuilderInterface $builder)
     {
         $this->extendBuilder($builder);
-        $builder->makeSelectSql();
+        if (method_exists($builder, "makeSelectSql")) {
+            $builder->makeSelectSql();
+        }
         $sql = $builder->getSql();
         $params = $builder->getParams();
         $stmt = $this->buildPdoStatement($sql, $params);
@@ -157,10 +160,12 @@ trait StorageReadMethodsTrait
      * @param ReadQueryBuilderInterface $builder
      * @return array
      */
-    protected function fetchAll(ReadQueryBuilderInterface $builder)
+    protected function fetchAll(QueryBuilderInterface $builder)
     {
         $this->extendBuilder($builder);
-        $builder->makeSelectSql();
+        if (method_exists($builder, "makeSelectSql")) {
+            $builder->makeSelectSql();
+        }
         $sql = $builder->getSql();
         $params = $builder->getParams();
         $stmt = $this->buildPdoStatement($sql, $params);
