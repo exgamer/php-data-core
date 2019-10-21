@@ -1,7 +1,7 @@
 <?php
 namespace concepture\php\data\core\db\mysql\read;
 
-use concepture\core\base\ReadCondition;
+use concepture\php\data\core\db\ReadCondition;
 use concepture\php\data\core\db\QueryBuilder as Base;
 use concepture\php\data\core\db\ReadQueryBuilderInterface;
 use concepture\php\data\core\db\traits\GroupTrait;
