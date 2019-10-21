@@ -17,7 +17,7 @@ trait StorageModifyMethodsTrait
      * @return mixed
      * @throws Exception
      */
-    public function insert(array $params) : int
+    public function persist(array $params) : int
     {
         $this->getConnection()->beginTransaction();
         try {
@@ -84,13 +84,13 @@ trait StorageModifyMethodsTrait
      * @param $id
      * @return bool
      */
-    public function deleteById($id)
+    public function removeById($id)
     {
         $condition = [
             'id' => $id
         ];
 
-        return $this->delete($condition);
+        return $this->remove($condition);
     }
 
     /**
@@ -104,7 +104,7 @@ trait StorageModifyMethodsTrait
      * }
      * @return bool
      */
-    public function delete($condition)
+    public function remove($condition)
     {
         $builder = $this->getModifyQueryBuilder();
         $builder->table($this->getTableName());
