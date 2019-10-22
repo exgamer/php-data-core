@@ -11,5 +11,5 @@ interface DataModifyInterface extends Base
 {
     public function persist(array $data) : int ;
     public function update(array $params, $condition) : bool ;
-    public function remove(array $condition) : bool ;
+    public function remove($condition) : bool ;
 }
