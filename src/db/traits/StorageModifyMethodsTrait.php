@@ -104,7 +104,7 @@ trait StorageModifyMethodsTrait
      * }
      * @return bool
      */
-    public function remove($condition)
+    public function remove($condition) : bool
     {
         $builder = $this->getModifyQueryBuilder();
         $builder->table($this->getTableName());
