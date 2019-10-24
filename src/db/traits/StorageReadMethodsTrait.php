@@ -154,7 +154,7 @@ trait StorageReadMethodsTrait
     /**
      * Возвращает массив записей
      *
-     * @param ReadQueryBuilderInterface $builder
+     * @param QueryBuilderInterface $builder
      * @return array
      */
     protected function fetchAll(QueryBuilderInterface $builder)
