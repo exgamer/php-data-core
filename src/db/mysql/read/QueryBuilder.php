@@ -28,6 +28,14 @@ class QueryBuilder extends Base implements ReadQueryBuilderInterface
     protected $calcRows = false;
 
     /**
+     * Добавить в запрос SQL_CALC_FOUND_ROWS
+     */
+    public function calculateRowsCount()
+    {
+        $this->calcRows = true;
+    }
+
+    /**
      * @return $this
      */
     public function makeSelectSql()
